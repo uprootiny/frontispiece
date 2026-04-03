@@ -1,0 +1,3 @@
+name = "The Handoff"
+one_liner = "End a session by writing context that lets the next session start cold."
+takeaway = "A handoff is not a summary. It is: current state, decisions made, what is broken, exact commands to resume. The next session — human or agent — should be able to pick up without asking a single clarifying question."

@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* iOS safe areas */
+.safe-top { padding-top: env(safe-area-inset-top); }
+.safe-bottom { padding-bottom: env(safe-area-inset-bottom); }
+
+/* Prevent iOS text size inflation */
+html { -webkit-text-size-adjust: 100%; }
+
+/* Smooth scrolling but respect reduced motion */
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+/* Touch manipulation: remove 300ms tap delay */
+.touch-manipulation { touch-action: manipulation; }
+
+/* Code wells: nice monospace with horizontal scroll */
+pre code {
+  font-family: "SF Mono", "JetBrains Mono", "Fira Code", ui-monospace, monospace;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Tap highlight for iOS */
+@media (hover: none) {
+  button, a, [phx-click] {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Prose overrides for dark mode */
+.prose-invert {
+  --tw-prose-body: rgba(255, 255, 255, 0.75);
+  --tw-prose-headings: rgba(255, 255, 255, 0.9);
+  --tw-prose-links: rgba(255, 255, 255, 0.9);
+  --tw-prose-code: rgba(255, 255, 255, 0.85);
+  --tw-prose-pre-bg: rgba(255, 255, 255, 0.05);
+}
+
+/* Asciinema player sizing */
+.ap-player { border-radius: 0.75rem; overflow: hidden; }
+
+/* Overscroll: prevent pull-to-refresh interfering with our swipe nav */
+body { overscroll-behavior: none; }
+
+/* Phoenix LiveView loading indicator */
+.phx-no-feedback.phx-submit-loading { opacity: 0.5; }
+
+/* Level panel transitions */
+@media (prefers-reduced-motion: no-preference) {
+  .animate-in {
+    animation: fade-up 200ms ease-out;
+  }
+}
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Tab scrollbar hide (horizontal tab strip) */
+[role="tablist"] {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+[role="tablist"]::-webkit-scrollbar { display: none; }
+
+/* LiveView disconnect/error indicators */
+.phx-connected { }
+.phx-loading { cursor: wait; }
+.phx-loading * { pointer-events: none; }

@@ -1,0 +1,23 @@
+# Elixir
+/_build/
+/deps/
+/.mix/
+/.hex/
+*.ez
+*.beam
+frontispiece.db
+frontispiece.db-*
+
+# Node (asset tooling only)
+/assets/node_modules/
+
+# Static build artifacts
+/priv/static/assets/
+
+# Rust TUI
+/tui/target/
+
+# OS
+.DS_Store
+frontispiece*.db*
+.claude/

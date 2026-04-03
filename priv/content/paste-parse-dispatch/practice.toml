@@ -1,0 +1,3 @@
+name = "Paste, Parse, Dispatch"
+one_liner = "Paste a transcript. Auto-decompose. Select pieces. Dispatch as context to a new agent."
+takeaway = "The fastest way to transfer context between sessions is not writing a handoff — it is pasting the raw transcript and letting structure emerge from parsing. Once you see the sections, you select only what matters and dispatch it. The practice is: paste, scan, pluck, launch."

@@ -1,0 +1,3 @@
+name = "Parallel Agents"
+one_liner = "Spin up concurrent sessions for independent concerns. Merge their results."
+takeaway = "The trick is knowing when tasks are truly independent. If they share state (same repo, same config, same server), serialize. If they don't (different repos, different servers, research vs. build), parallelize. The merge step is where you decide what to keep."
