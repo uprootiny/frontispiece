@@ -1,0 +1,16 @@
+services:
+  frontispiece:
+    build: .
+    ports:
+      - "4100:4000"
+    environment:
+      - DATABASE_PATH=/app/data/frontispiece.db
+      - SECRET_KEY_BASE=${SECRET_KEY_BASE}
+      - PHX_HOST=frontispiece.dissemblage.art
+      - PORT=4000
+    volumes:
+      - frontispiece_data:/app/data
+    restart: unless-stopped
+
+volumes:
+  frontispiece_data:
