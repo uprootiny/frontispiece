@@ -11,8 +11,12 @@ if config_env() == :prod do
   host = System.get_env("PHX_HOST") || "localhost"
   port = String.to_integer(System.get_env("PORT") || "4000")
 
+  scheme = System.get_env("PHX_SCHEME") || "http"
+  url_port = if scheme == "https", do: 443, else: 80
+
   config :frontispiece, FrontispieceWeb.Endpoint,
-    url: [host: host, port: 443, scheme: "https"],
+    url: [host: host, port: url_port, scheme: scheme],
     http: [ip: {0, 0, 0, 0}, port: port],
-    secret_key_base: secret_key_base
+    secret_key_base: secret_key_base,
+    check_origin: ["//#{host}", "//localhost"]
 end
