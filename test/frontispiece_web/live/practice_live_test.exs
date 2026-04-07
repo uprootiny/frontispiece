@@ -9,9 +9,9 @@ defmodule FrontispieceWeb.PracticeLiveTest do
 
   test "renders L1 with practice cards by default", %{conn: conn} do
     {:ok, _view, html} = live(conn, "/")
-    assert html =~ "Why this exists"
+    assert html =~ "What if prompts were practiced"
     assert html =~ "Test Practice"
-    assert html =~ "practice = shape that recurs"
+    assert html =~ "practice = a move you can practice"
   end
 
   test "switching levels works", %{conn: conn} do
